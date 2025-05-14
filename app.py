@@ -75,4 +75,11 @@ def view_cart():
     cart = user_carts.get(current_user, [])
     return jsonify({"cart": cart}), 200
 
+from flask import send_from_directory
+
+@app.route('/<path:filename>')
+def serve_static(filename):
+    return send_from_directory('static', filename)
+
+
 
