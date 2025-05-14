@@ -77,9 +77,12 @@ def view_cart():
 
 from flask import send_from_directory
 
-@app.route('/')
-def home():
-    return send_from_directory('static', 'index.html')
+from flask import send_from_directory
+
+@app.route('/<path:filename>')
+def serve_static(filename):
+    return send_from_directory('static', filename)
+
 
 
 
