@@ -118,11 +118,11 @@ from flask import send_from_directory
 def serve_static(filename):
     return send_from_directory('static', filename)
 
-# #--Run app for development purpose only
-# #For local development and testing uncomment the below block
-#
+# #--Run app locally in debug mode for development and testing purpose only
+# #Not for production use. Use WSGI server like Gunicorn instead
+# # Uncomment the below lines to run locally
 # if __name__ == '__main__':
-#    # Run app in debug mode (use this only in development!)
+#    #  Start flask in debug mode (use this only in development!)
 #    app.run(debug=True)
 
 
